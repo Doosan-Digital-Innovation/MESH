@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding: 20px 20px 20px 20px;
+      }
+      .card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .memo {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .memo:hover {
+        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25),
+          0 5px 5px rgba(0, 0, 0, 0.22);
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      .new-card {
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.4);
+        border-style: none;
+        padding: 10px 20px 10px 20px;
+      }
+      .new-card:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      .list-title {
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">
+        <div class="list-title">
+          <span class="badge badge-primary">십입사원</span>&nbsp;&nbsp; 3
+        </div>
+        <!-- START: Card List -->
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-primary">십입사원</span>
+              <span class="badge badge-secondary">A Project</span>
+              <span class="badge badge-success">B Project</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-info">D사</span>
+              <span class="badge badge-light">사장님</span>
+              <span class="badge badge-dark">부장님</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
+          </div>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+      <li class="list-group-item">
+        <!-- START: Card List -->
+        <div class="list-title">
+          <span class="badge badge-info">D사</span>&nbsp;&nbsp; 2
+        </div>
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-info">D사</span>
+              <span class="badge badge-light">사장님</span>
+              <span class="badge badge-dark">부장님</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
+          </div>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+      <li class="list-group-item">
+        <div class="list-title">
+          <span class="badge badge-danger">디지털 플랫폼 PJT</span>&nbsp;&nbsp;
+          1
+        </div>
+        <!-- START: Card List -->
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
+          </div>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+    </ul>
+  </body>
+</html>
