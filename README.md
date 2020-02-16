@@ -1,6 +1,8 @@
 # Name of the project
 > Additional information or tag line
 
+Copyright &copy; 2020 <a href="https://github.com/orgs/Doosan-Digital-Innovation/teams/ddi-1" target="_blank">Doosan Digital Innovation</a>
+
 A brief description of your project, what it is used for.
 
 ## Documents
