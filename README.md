@@ -101,4 +101,4 @@ Documents your database design and schemas, relations etc...
 
 ## Licensing
 
-Apache License, Version 2.0
+[Apache License 2.0](LICENSE)
