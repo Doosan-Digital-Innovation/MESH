@@ -1,4 +1,7 @@
 # Name of the project
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![npm version](https://img.shields.io/npm/v/gh-badges.svg)](https://npmjs.org/package/gh-badges)
+
 > Additional information or tag line
 
 Copyright &copy; 2020 <a href="https://github.com/orgs/Doosan-Digital-Innovation/teams/ddi-1" target="_blank">Doosan Digital Innovation</a>
