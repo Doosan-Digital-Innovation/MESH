@@ -1,6 +1,6 @@
 <a name="git"></a>
 # Git
-![Git](/images/branching.png)
+
 <a name="some-git-rules"></a>
 
 ## 1. Git 규칙

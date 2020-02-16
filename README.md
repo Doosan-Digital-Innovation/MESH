@@ -1,5 +1,10 @@
 # Name of the project
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![npm version](https://img.shields.io/npm/v/gh-badges.svg)](https://npmjs.org/package/gh-badges)
+
 > Additional information or tag line
+
+Copyright &copy; 2020 <a href="https://github.com/orgs/Doosan-Digital-Innovation/teams/ddi-1" target="_blank">Doosan Digital Innovation</a>
 
 A brief description of your project, what it is used for.
 
@@ -99,4 +104,4 @@ Documents your database design and schemas, relations etc...
 
 ## Licensing
 
-State what the license is and how to find the text version of the license.
+[Apache License 2.0](LICENSE)
