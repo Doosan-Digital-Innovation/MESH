@@ -11,14 +11,68 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style02.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
+      integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+      integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+      crossorigin="anonymous"
+    ></script>
     <style>
-      .contents {
-        padding: 50px 50px 50px 50px;
+      body {
+        padding: 20px 20px 20px 20px;
       }
       .card {
         margin-top: 10px;
         margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .card .menu-btn {
+        position: absolute;
+        z-index: 1;
+        right: 0px;
+        width: 25px;
+        height: 25px;
+        padding-left: 7px;
+        padding-right: 7px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+      }
+      .card:hover .menu-btn {
+        visibility: visible;
+      }
+      .card .menu-btn:hover {
+        box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25),
+          0 5px 5px rgba(0, 0, 0, 0.22);
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      .dots:after {
+        content: "\2807";
+        font-size: 1em;
+        color: #2e2e2e;
       }
       .memo {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -42,201 +96,326 @@
         font-weight: bold;
         color: rgba(0, 0, 0, 0.4);
       }
+      .card .menu-list {
+        position: absolute;
+        z-index: 2;
+        left: 200px;
+      }
+      .dropdown-divider {
+        margin-bottom: 0;
+      }
+      .dropdown-footer {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .dropdown-item:active {
+        background-color: rgba(107, 103, 103, 0.4);
+      }
+      .list-group-item {
+        border: none;
+      }
     </style>
   </head>
   <body>
-    <!-- START: Top Navbar-->
-    <nav
-      class="navbar navbar-expand-lg navbar-light"
-      style="background-color: #e3f2fd;"
-    >
-      <a class="navbar-brand" href="#">Project</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
-          </li>
-        </ul>
-      </div>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
-    </nav>
-    <!-- END: Top Navbar -->
-    <span onclick="openNav()">
-      &rang;
-    </span>
-    <!-- START: Side Navbar -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
-    <!-- END: Side Navbar -->
-    <!-- START: Contents -->
-    <div class="contents">
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">
-          <div class="list-title">
-            <span class="badge badge-primary">십입사원</span>&nbsp;&nbsp; 3
-          </div>
-          <!-- START: Card List -->
-          <div class="list-group justify-content-between" style="width: 18rem;">
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-primary">십입사원</span>
-                <span class="badge badge-secondary">A Project</span>
-                <span class="badge badge-success">B Project</span>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">
+        <div class="list-title">
+          <span class="badge badge-primary">십입사원</span>&nbsp;&nbsp; 3
+        </div>
+        <!-- START: Card List -->
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
               </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-primary">십입사원</span>
+              <span class="badge badge-secondary">A Project</span>
+              <span class="badge badge-success">B Project</span>
             </div>
-            <!-- END: Card -->
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-info">D사</span>
-                <span class="badge badge-light">사장님</span>
-                <span class="badge badge-dark">부장님</span>
-              </div>
-            </div>
-            <!-- END: Card -->
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-danger">디지털 플랫폼 PJT</span>
-                <span class="badge badge-warning">C사</span>
-              </div>
-            </div>
-            <!-- END: Card -->
-            <!-- START: Empty Card -->
-            <div class="card new-card" style="width: 18rem;">
-              &plus; New
-            </div>
-            <!-- END: Empty Card -->
           </div>
-          <!-- END: Card List -->
-        </li>
-        <li class="list-group-item">
-          <!-- START: Card List -->
-          <div class="list-title">
-            <span class="badge badge-info">D사</span>&nbsp;&nbsp; 2
-          </div>
-          <div class="list-group justify-content-between" style="width: 18rem;">
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-info">D사</span>
-                <span class="badge badge-light">사장님</span>
-                <span class="badge badge-dark">부장님</span>
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
               </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-info">D사</span>
+              <span class="badge badge-light">사장님</span>
+              <span class="badge badge-dark">부장님</span>
             </div>
-            <!-- END: Card -->
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-danger">디지털 플랫폼 PJT</span>
-                <span class="badge badge-warning">C사</span>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
               </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
             </div>
-            <!-- END: Card -->
-            <!-- START: Empty Card -->
-            <div class="card new-card" style="width: 18rem;">
-              &plus; New
-            </div>
-            <!-- END: Empty Card -->
           </div>
-          <!-- END: Card List -->
-        </li>
-        <li class="list-group-item">
-          <div class="list-title">
-            <span class="badge badge-danger">디지털 플랫폼 PJT</span
-            >&nbsp;&nbsp; 1
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
           </div>
-          <!-- START: Card List -->
-          <div class="list-group justify-content-between" style="width: 18rem;">
-            <!-- START: Card -->
-            <div class="card memo" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  With supporting text below ...
-                </p>
-                <span class="badge badge-danger">디지털 플랫폼 PJT</span>
-                <span class="badge badge-warning">C사</span>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+      <li class="list-group-item">
+        <!-- START: Card List -->
+        <div class="list-title">
+          <span class="badge badge-info">D사</span>&nbsp;&nbsp; 2
+        </div>
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
               </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-info">D사</span>
+              <span class="badge badge-light">사장님</span>
+              <span class="badge badge-dark">부장님</span>
             </div>
-            <!-- END: Card -->
-            <!-- START: Empty Card -->
-            <div class="card new-card" style="width: 18rem;">
-              &plus; New
-            </div>
-            <!-- END: Empty Card -->
           </div>
-          <!-- END: Card List -->
-        </li>
-      </ul>
-    </div>
-    <!-- END: Contents -->
+          <!-- END: Card -->
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
+          </div>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+      <li class="list-group-item">
+        <div class="list-title">
+          <span class="badge badge-danger">디지털 플랫폼 PJT</span>&nbsp;&nbsp;
+          1
+        </div>
+        <!-- START: Card List -->
+        <div class="list-group justify-content-between" style="width: 18rem;">
+          <!-- START: Card -->
+          <div class="card memo" style="width: 18rem;">
+            <div class="card-body">
+              <!-- START: Dropright -->
+              <div class="dropright">
+                <div
+                  class="menu-btn rounded border center"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <div class="dots"></div>
+                </div>
+                <div class="dropdown-menu" aria-labelledby="droprightMenuLink">
+                  <div class="dropdown-item">
+                    <i class="fas fa-trash-alt"></i>
+                    &nbsp;&nbsp;Delete
+                  </div>
+                  <div class="dropdown-item">
+                    <i class="fas fa-edit"></i>
+                    &nbsp;Edit
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item dropdown-footer disabled">
+                    <small class="text-muted"
+                      >Last Edited by mingyu.Gu<br />2020.02.17
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <!-- END: Dropright -->
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below ...
+              </p>
+              <span class="badge badge-danger">디지털 플랫폼 PJT</span>
+              <span class="badge badge-warning">C사</span>
+            </div>
+          </div>
+          <!-- END: Card -->
+          <!-- START: Empty Card -->
+          <div class="card new-card" style="width: 18rem;">
+            &plus; New
+          </div>
+          <!-- END: Empty Card -->
+        </div>
+        <!-- END: Card List -->
+      </li>
+    </ul>
   </body>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
 </html>
